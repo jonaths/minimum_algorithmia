@@ -26,10 +26,11 @@
       ...
 """
 from Algorithmia import ADK
+from module_bla.say_hi import hello
 
 
 def apply(input):
-    return "hello {}".format(str(input))
+    return hello(input)
 
 
 algorithm = ADK(apply)
