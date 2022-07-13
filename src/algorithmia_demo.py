@@ -26,7 +26,7 @@
       ...
 """
 from Algorithmia import ADK
-from .module_bla.say_hi import hello
+from module_bla.say_hi import hello
 
 
 def apply(input):
