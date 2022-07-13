@@ -29,7 +29,7 @@
 import os
 import sys
 
-# para incluir app en el path
+# Para incluir src en el path y no tener que usar imports relativos
 testdir = os.path.dirname(__file__)
 srcdir = '../src'
 appdir = os.path.abspath(os.path.join(testdir, srcdir))
@@ -39,9 +39,18 @@ from Algorithmia import ADK
 from module_bla.say_hi import hello
 
 
-def apply(input):
-    return hello(input)
+def load():
+    globals = {"payload": "Nice to meet you. "}
+    return globals
 
 
-algorithm = ADK(apply)
+def apply(input, globals):
+    """
+    LLama a una función importada localmente y la concatena con un valor recuperado localmente.
+    Podría ser un modelo.
+    """
+    return f'{hello(input)} {globals["payload"]}'
+
+
+algorithm = ADK(apply, load)
 algorithm.init("Algorithmia")
