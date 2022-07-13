@@ -25,6 +25,13 @@
       algorithm = ADK(apply, load)
       ...
 """
+
+# para incluir app en el path
+testdir = os.path.dirname(__file__)
+srcdir = '../src'
+appdir = os.path.abspath(os.path.join(testdir, srcdir))
+sys.path.insert(0, appdir)
+
 from Algorithmia import ADK
 from module_bla.say_hi import hello
 
