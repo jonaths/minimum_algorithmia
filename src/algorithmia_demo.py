@@ -29,7 +29,7 @@
 import os
 import sys
 
-# para incluir app en el path
+# para incluir app en el path...
 testdir = os.path.dirname(__file__)
 srcdir = '../src'
 appdir = os.path.abspath(os.path.join(testdir, srcdir))
