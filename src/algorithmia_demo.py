@@ -40,6 +40,7 @@ from module_bla.say_hi import hello
 
 
 def apply(input):
+    print("in apply")
     return hello(input)
 
 
