@@ -28,6 +28,7 @@
 
 import os
 import sys
+import Algorithmia
 
 # para incluir app en el path...
 testdir = os.path.dirname(__file__)
@@ -38,8 +39,13 @@ sys.path.insert(0, appdir)
 from Algorithmia import ADK
 from module_bla.say_hi import hello
 
+client = Algorithmia.client()
+
 
 def apply(input):
+
+    creds = client.file('data://jserrano/test_data/data.json').getJson()
+
     print("in apply")
     return hello(input)
 
