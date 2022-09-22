@@ -44,7 +44,7 @@ client = Algorithmia.client()
 
 def apply(input):
 
-    creds = client.file('data://jserrano/test_data/data.json').getJson()
+    # creds = client.file('data://jserrano/test_data/data.json').getJson()
 
     print("in apply")
     return hello(input)

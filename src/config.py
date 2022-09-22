@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 import os
-
+from common.tools.logger import papertrail_logging
 
 load_dotenv(verbose=True)
 
@@ -9,3 +9,8 @@ load_dotenv(verbose=True)
 
 ENV_VAR = os.getenv('ENV_VAR')
 STORAGE_LOGS = os.getenv('STORAGE_LOGS')
+
+PAPERTRAIL_ADDRESS = os.getenv('PAPERTRAIL_ADDRESS')
+PAPERTRAIL_UDP_PORT = os.getenv('PAPERTRAIL_UDP_PORT')
+
+logger = papertrail_logging(address=(PAPERTRAIL_ADDRESS, int(PAPERTRAIL_UDP_PORT)))
